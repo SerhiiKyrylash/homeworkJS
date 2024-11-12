@@ -13,4 +13,4 @@ function arrofElements(array){
       }
 }
 
-arrofElements([112, 45,34,67, null,'fsdf',false]);
+arrofElements([112, 45,34,67, null,'vova',false]);

@@ -1,7 +1,7 @@
 
 function square(a,b){
-    let area = a*b;
-    return area
+    let result = a*b;
+    return result
 
 }
 
