@@ -6,6 +6,7 @@ let srtringTwo = 'lorem ipsum';
 let stringThree = 'stringOne';
 
 
+
 const strings = [stringOne, srtringTwo, stringThree];
 
 for (const item of strings) {
