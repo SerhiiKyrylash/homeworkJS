@@ -1,48 +1,45 @@
-// - є масив
-// let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
-// -- відсортувати його за спаданням за monthDuration
-// -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-// -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+// #gsKLAsNWM
+// *Через Array.prototype. створити власний foreach, filter
+
+// Array.prototype.myForEach = function (callback){
+//     const Array = this;
+//   for (let item of Array ){
+//       callback(item)
+//   }
+// };
+//
+// [11, 22, 44].myForEach(function (x){
+//     console.log(x)
+// });
 
 
-let coursesAndDurationArray = [
-    {title: 'JavaScript Complex', monthDuration: 5},
-    {title: 'Java Complex', monthDuration: 6},
-    {title: 'Python Complex', monthDuration: 6},
-    {title: 'QA Complex', monthDuration: 4},
-    {title: 'FullStack', monthDuration: 7},
-    {title: 'Frontend', monthDuration: 4}
+
+Array.prototype.myFilter = function (say){
+    const arr = [];
+    for (let item of this){
+        if(say(item)){
+            arr.push(item)
+        }
+    }
+    return arr
+}
+
+
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true}
 ];
+const result = users.myFilter(function (item){
+   return  item.status
 
-let courseDuration = coursesAndDurationArray.sort(function (a,b){
-    return b.monthDuration - a.monthDuration
 });
-let courseDurationFilter = courseDuration.filter (function (item){
-    return item.monthDuration > 5
-});
-
-let courseDurationMap = courseDurationFilter.map(function (item, index){
-  let id = {
-      title: item.title,
-      monthDuration: item.monthDuration,
-      id: index + 1
-
-  };
-    return id
-});
-
-
-console.log(courseDurationMap);
-
-
-
-
-
-
+console.log(result);

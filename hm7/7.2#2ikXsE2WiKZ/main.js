@@ -1,95 +1,32 @@
-// взяти з arrays.js масив coursesArray
-// --написати пошук всіх об'єктів, в яких в modules є sass
-// --написати пошук всіх об'єктів, в яких в modules є docker
-//
+// #2ikXsE2WiKZ
+// - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
 
-let coursesArray = [
-    {
-        title: 'JavaScript Complex',
-        monthDuration: 5,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
-    },
-    {
-        title: 'Java Complex',
-        monthDuration: 6,
-        hourDuration: 909,
-        modules: ['html',
-            'css',
-            'js',
-            'mysql',
-            'mongodb',
-            'angular',
-            'aws',
-            'docker',
-            'git',
-            'java core',
-            'java advanced']
-    },
-    {
-        title: 'Python Complex',
-        monthDuration: 6,
-        hourDuration: 909,
-        modules: ['html',
-            'css',
-            'js',
-            'mysql',
-            'mongodb',
-            'angular',
-            'aws',
-            'docker',
-            'python core',
-            'python advanced']
-    },
-    {
-        title: 'QA Complex',
-        monthDuration: 4,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-    },
-    {
-        title: 'FullStack',
-        monthDuration: 7,
-        hourDuration: 909,
-        modules: ['html',
-            'css',
-            'js',
-            'mysql',
-            'mongodb',
-            'react',
-            'angular',
-            'aws',
-            'docker',
-            'git',
-            'node.js',
-            'python',
-            'java']
-    },
-    {
-        title: 'Frontend',
-        monthDuration: 4,
-        hourDuration: 909,
-        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
-    }
+function User (id, name,surname, email, phone) {
+    this.id = id;
+    this.name = name;
+    this.surname = surname;
+    this.email = email;
+    this.phone = phone;
+}
+
+let users = [
+    new User (1, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (2, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (3, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (4, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (5, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (6, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (7, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (8, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (9, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
+    new User (10, 'vova', 'Petrakov', 'www.skd@mail', '+38065349338'),
 ];
 
-let object = coursesArray.filter(function (item){
-    return item.modules.includes('sass');
-})
-console.log(object);
-
-
-let objectDocker = coursesArray.filter(function (item){
-    return item.modules.includes('docker');
+let filterArray = users.filter(function (item){
+    return item.id % 2 === 0;
 })
 
-console.log(objectDocker);
-
-
-
-
-
-
+console.log(filterArray);
 
 
 
